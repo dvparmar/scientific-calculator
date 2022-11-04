@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SCIENCETIFIC CALCULATOR</title>
+	<style type="text/css">
+		table{
+			background-color: black;
+			padding: 20px;
+			border-radius: 20px;
+			border-collapse: all;
+			margin-top: 200px;
+			background: cyan;
+		}
+		h1{
+			color: magenta;
+			background-color: yellow;
+			text-align: center;
+		}
+		.btn{
+			height: 50px;
+			width: 50px;
+			background: linear-gradient(to bottom, #66ff338c 0%, #cc00ff8c 100%);
+			border-radius: 10px;
+			color: white;
+		}
+		.txt1{
+			width: 97%;
+		}
+	</style>
+</head>
+<body>
+	<h1>SCIENCETIFIC CALCULATOR</h1>
+	<table align="center">
+		<tr align="center">
+			<td colspan="6">
+				<input type="textbox" class="txt1" id="ans" placeholder="0">
+			</td>
+		</tr>
+		<tr>
+			<td><input type="button" class="btn" onclick="backspc()" value="AC"></td>
+			<td><input type="button" class="btn" onclick="fact()" value="x!"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="("></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value=")"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="%"></td>
+			<td><input type="button" class="btn" onclick="document.getElementById('ans').value=''" value='CE'></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="btn" onclick="sin()" value="SIN"></td>
+			<td><input type="button" class="btn" onclick="log()" value="LOG"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="7"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="8"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="9"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="/"></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="btn" onclick="cos()" value="COS"></td>
+			<td><input type="button" class="btn" onclick="PI()" value="PI"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="4"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="5"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="6"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="*"></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="btn" onclick="tan()" value="TAN"></td>
+			<td><input type="button" class="btn" onclick="sqrt()" value="ROOT"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="1"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="2"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="3"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="-"></td>
+		</tr>
+		<tr>
+			<td><input type="button" class="btn" onclick="e()" value="e"></td>
+			<td><input type="button" class="btn" onclick="pow()" value="x^y"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="0"></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="."></td>
+			<td><input type="button" class="btn" onclick="calculator()" value="="></td>
+			<td><input type="button" class="btn" onclick="appendNumber(this)" value="+"></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function appendNumber(n){
+			document.getElementById("ans").value+=n.value;
+
+		}
+		function calculator(){
+			n=document.getElementById("ans").value;
+			ans=eval(n);
+			document.getElementById("ans").value=ans;
+		}
+		function sin(){
+			document.getElementById("ans").value=Math.sin(document.getElementById("ans").value);
+		}
+		function cos(){
+			document.getElementById("ans").value=Math.cos(document.getElementById("ans").value);
+		}
+		function tan(){
+			document.getElementById("ans").value=Math.tan(document.getElementById("ans").value);
+		}
+		function log(){
+			document.getElementById("ans").value=Math.log(document.getElementById("ans").value);
+		}
+		function pow(){
+			document.getElementById("ans").value=Math.pow(document.getElementById("ans").value,2);
+		}
+		function sqrt(){
+			document.getElementById("ans").value=Math.sqrt(document.getElementById("ans").value);
+		}
+		function PI(){
+			document.getElementById("ans").value=3.14159265;
+		}
+		function e(){
+			document.getElementById("ans").value=2.71828182846;
+		}
+		function fact(){
+			n=document.getElementById("ans").value;
+			fact=1;
+		   for(let i=1;i<=n;i++){
+			fact=fact*i;
+		}
+		document.getElementById("ans").value=fact;
+		}
+		function backspc(){
+			document.getElementById("ans").value=document.getElementById("ans").value.substr(0,document.getElementById("ans").value.length-1);
+		}
+		
+	</script>
+
+	
+
+</body>
+</html>
